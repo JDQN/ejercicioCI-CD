@@ -8,13 +8,13 @@ public class User {
 		this.name = name;
 	}
 
-	public String getName() {
+	public String getName()
 		return name;
-	}
 
-	public void setName(String newName) {
+
+	public void setName(String newName)
 		this.name = newName;
-	}
+
 
 	@Override
 	public String toString() {
