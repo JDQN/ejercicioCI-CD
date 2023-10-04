@@ -7,7 +7,7 @@ pipeline {
     }
 
     stages {
-        stage('Checkout del código') {
+        stage('Checkout del codigo') {
             steps {
                 // Puedes agregar aquí la configuración para obtener el código fuente
                 // desde un sistema de control de versiones como Git
@@ -19,7 +19,7 @@ pipeline {
         stage('Ejecutar Prueba') {
             steps {
                 script {
-                    def mensaje = '¡Hola, mundo desde Jenkins!'
+                    def mensaje = 'Hola, mundo desde Jenkins'
                     echo mensaje
 
                     // Aquí puedes agregar comandos para ejecutar tus pruebas
