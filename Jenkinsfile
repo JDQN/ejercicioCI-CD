@@ -9,7 +9,13 @@ pipeline {
                     def mensaje = '¡Hola, mundo desde Jenkins!'
                     echo mensaje
 
+                    def minutos = 1
 
+                    while (true) {
+                        sleep time: minutos * 60, unit: 'SECONDS'
+                        echo "After ${minutos} minute, print: ${minutos}"
+                        minutos++
+                    }
                 }
             }
         }
