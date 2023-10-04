@@ -1,6 +1,12 @@
 pipeline {
     agent any
 
+    options {
+        // Agregar una descripción al trabajo
+        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '5'))
+        disableConcurrentBuilds()
+    }
+
     stages {
         stage('Ejecutar Prueba') {
             steps {
@@ -16,6 +22,9 @@ pipeline {
     post {
         success {
             echo 'La prueba se ha ejecutado exitosamente.'
+        }
+        failure {
+            echo 'La prueba ha fallado.'
         }
     }
 }
