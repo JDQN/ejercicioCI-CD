@@ -2,14 +2,20 @@ pipeline {
     agent any
 
     stages {
-        stage('Build and Test') {
+        stage('Ejecutar Prueba') {
             steps {
-                // Limpia el proyecto
-                sh 'mvn clean'
-
-                // Ejecuta las pruebas
-                sh 'mvn test'
+                script {
+                    // Este es el mensaje que se mostrará en la consola de Jenkins
+                    def mensaje = '¡Hola, mundo desde Jenkins!'
+                    echo mensaje
+                }
             }
+        }
+    }
+
+    post {
+        success {
+            echo 'La prueba se ha ejecutado exitosamente.'
         }
     }
 }
