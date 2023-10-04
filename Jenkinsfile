@@ -9,9 +9,6 @@ pipeline {
                       def mensaje = "¡Hola, mundo desde Jenkins! \n\nProyecto: ${env.JOB_NAME} \nVersión: ${env.BUILD_NUMBER}"
                       echo mensaje
 
-                      // Retrasar la ejecución del pipeline por 1 minuto
-                      sleep(time: 60, unit: 'SECONDS')
-
                       // Imprimir los números del 1 al 10
                       for (int i = 1; i <= 10; i++) {
                           echo i
